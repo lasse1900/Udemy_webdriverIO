@@ -1,0 +1,20 @@
+p {
+    color: brown
+  }
+  
+  img {
+    border: 5px solid black
+  }
+  
+  #heading {
+    text-decoration: underline
+  }
+  
+  .paragraph {
+    font-style: italic
+  }
+  
+  .image.border {
+    padding: 5px;
+    border-color: gold
+  }
