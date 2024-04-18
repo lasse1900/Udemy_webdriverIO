@@ -43,7 +43,19 @@ describe('Home', () => {
         // await expect(browser).toHaveTitle('Practice E-Commerce Site – SDET Unicorns');
         await expect(browser).not.toHaveUrlContaining('get-started')
     })
+
+    it('Find headinf element & asser the text', async () => {
+        // Open URL
+       await browser.url('https://practice.sdetunicorns.com/about/');
+
+        // get the text
+        const headingEl = await $("//h3[normalize-space()='Our Story']")    
+
+        // Find heading element
+        const headingText = await headingEl.getText()
+
+        // Assert the text
+        // await expect(headingText).toEqual('Our Story')   // possible manipulation
+        await expect(headingEl).toHaveText('Our Story')     // validate directly
+    })
 })
-
-
-// //img[alt="Practice E-Commerce Site"]

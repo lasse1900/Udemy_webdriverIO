@@ -8,3 +8,6 @@
 - Run tests:
 `npx wdio`
 
+- wdio.conf_bup.js
+  test configuration backup (starter)
+
