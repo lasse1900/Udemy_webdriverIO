@@ -1,22 +1,26 @@
-// baseUrl = https://practice.sdetunicorns.com/
+// baseUrl = https://practice.sdetuniIcorns.com/
 describe('Navigation Menu', () => {
     it('Get the text of all menu items & assert them', async () => {
         await browser.url('/');
     
         const expectedLinks = [
           "Home",
+          "About",
+          "Shop",
+          "Blog",
+          "Contact",
+          "My account"
         ];
 
         const actualLinks = [];
     
-        // const navLinks = await $('#primary-menu').$$('li[id*=menu]');
-        const navLinks = await $('#zak-primary-nav').$$('li[id*=menu-item-489]');
+        const navLinks = await $('#zak-primary-menu').$$('li[id*=menu]')
 
         for (const link of navLinks) {
             actualLinks.push(await link.getText());
-          }
+        }
       
         await expect(expectedLinks).toEqual(actualLinks);
-      });
 
-})
+      });
+});
