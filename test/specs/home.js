@@ -55,7 +55,7 @@ describe('Home', () => {
         const headingText = await headingEl.getText()
 
         // Assert the text
-        // await expect(headingText).toEqual('Our Story')   // possible manipulation
-        await expect(headingEl).toHaveText('Our Story')     // validate directly
+        //await expect(headingText).toEqual('Our Story')   // Jest library - possible manipulation (no waits/retries directly)
+        await expect(headingEl).toHaveText('Our Story')     // wdio expect assertion -validate directly, giving wait & retry
     })
 })
