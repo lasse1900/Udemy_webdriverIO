@@ -1,10 +1,7 @@
 // baseUrl = https://practice.sdetuniIcorns.com/
-import HomePage from "../pages/home-page.js";
-
 describe('Navigation Menu', () => {
     it('Get the text of all menu items & assert them', async () => {
-        // await browser.url('/');
-        await HomePage.open();
+        await browser.url('/');
     
         const expectedLinks = [
           "Home",
@@ -17,9 +14,8 @@ describe('Navigation Menu', () => {
 
         const actualLinks = [];
     
-        // const navLinks = await $('#zak-primary-menu').$$('li[id*=menu]');
-        // const navLinks = await $$('#zak-primary-menu li[id*=menu]');
-        const navLinks = await HomePage.NavComponent.linksNavmenu;
+        const navLinks = await $('#zak-primary-menu').$$('li[id*=menu]');
+        // const navLinks = await $$('#zak-primary-menu li[id*=menu]')
 
         for (const link of navLinks) {
             actualLinks.push(await link.getText());
@@ -32,8 +28,7 @@ describe('Navigation Menu', () => {
       // hardcoded timeout
       // browser.pause(5000)
 
-      // browser.url('/');
-      await HomePage.open();
+      browser.url('/');
   
       const expectedLinks = [
         "Home",
@@ -49,8 +44,8 @@ describe('Navigation Menu', () => {
       // await $('#zak-primary-menu').waitForDisplayed({timeout: 5000})
       await $('#zak-primary-menu li').waitForClickable();
   
-      // const navLinks = await $('#zak-primary-menu').$$('li[id*=menu]');
-      const navLinks = await $$('#zak-primary-menu li[id*=menu]');
+      const navLinks = await $('#zak-primary-menu').$$('li[id*=menu]');
+      // const navLinks = await $$('#zak-primary-menu li[id*=menu]')
 
       for (const link of navLinks) {
           actualLinks.push(await link.getText());
@@ -79,8 +74,7 @@ describe('Navigation Menu', () => {
       // await $('#zak-primary-menu li').waitForClickable()
       // wait until the Home text is displayed on the navigation menu
       await browser.waitUntil(async function(){
-        // const homeText = await $('#zak-primary-menu li').getText(); // Home 2
-        const homeText = await HomePage.NavComponent.firstNavMenuList.getText(); // Home
+        const homeText = await $('#zak-primary-menu li').getText(); // Home
         return homeText === "Home"; // true | false
       },{
         timeout: 5000,
@@ -88,9 +82,8 @@ describe('Navigation Menu', () => {
       });
 
   
-      // const navLinks = await $('#zak-primary-menu').$$('li[id*=menu]');
-      // const navLinks = await $$('#zak-primary-menu li[id*=menu]');
-      const navLinks = await HomePage.NavComponent.linksNavmenu;
+      const navLinks = await $('#zak-primary-menu').$$('li[id*=menu]');
+      // const navLinks = await $$('#zak-primary-menu li[id*=menu]')
 
       for (const link of navLinks) {
           actualLinks.push(await link.getText());

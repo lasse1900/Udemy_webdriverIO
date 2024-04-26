@@ -1,3 +1,5 @@
+import NavComponent from "./components/nav-comp.js";
+
 class HomePage {
     open() {
         return browser.url('/');
@@ -19,6 +21,10 @@ class HomePage {
         const headingEl = this.txtHeading;
         const headingText = headingEl.getText();
         return (headingText);
+    }
+
+    get NavComponent() {
+        return NavComponent;
     }
 }
 
