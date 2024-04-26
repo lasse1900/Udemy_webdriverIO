@@ -55,10 +55,17 @@ export const config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        browserName: 'chrome'
-    }],
-
+    capabilities: [
+        {
+          // Chrome capabilities
+          browserName: 'chrome',
+        },
+        // {
+        //   // Edge capabilities
+        //   browserName: 'edge',
+        //   // Add any specific edge options here if needed
+        // },
+      ],
     //
     // ===================
     // Test Configurations

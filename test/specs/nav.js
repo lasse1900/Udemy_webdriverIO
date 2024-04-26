@@ -14,7 +14,7 @@ describe('Navigation Menu', () => {
 
         const actualLinks = [];
     
-        const navLinks = await $('#zak-primary-menu').$$('li[id*=menu]')
+        const navLinks = await $('#zak-primary-menu').$$('li[id*=menu]');
         // const navLinks = await $$('#zak-primary-menu li[id*=menu]')
 
         for (const link of navLinks) {
@@ -42,9 +42,9 @@ describe('Navigation Menu', () => {
       const actualLinks = [];
 
       // await $('#zak-primary-menu').waitForDisplayed({timeout: 5000})
-      await $('#zak-primary-menu li').waitForClickable()
+      await $('#zak-primary-menu li').waitForClickable();
   
-      const navLinks = await $('#zak-primary-menu').$$('li[id*=menu]')
+      const navLinks = await $('#zak-primary-menu').$$('li[id*=menu]');
       // const navLinks = await $$('#zak-primary-menu li[id*=menu]')
 
       for (const link of navLinks) {
@@ -74,15 +74,15 @@ describe('Navigation Menu', () => {
       // await $('#zak-primary-menu li').waitForClickable()
       // wait until the Home text is displayed on the navigation menu
       await browser.waitUntil(async function(){
-        const homeText = await $('#zak-primary-menu li').getText() // Home
+        const homeText = await $('#zak-primary-menu li').getText(); // Home
         return homeText === "Home"; // true | false
       },{
         timeout: 5000,
         timeoutMsg: 'Could not verify the Home text from #zak-primary-menu li'
-      })
+      });
 
   
-      const navLinks = await $('#zak-primary-menu').$$('li[id*=menu]')
+      const navLinks = await $('#zak-primary-menu').$$('li[id*=menu]');
       // const navLinks = await $$('#zak-primary-menu li[id*=menu]')
 
       for (const link of navLinks) {

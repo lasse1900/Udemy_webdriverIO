@@ -27,7 +27,7 @@ export const config = {
     //
     specs: [
         // ToDo: define location for spec files here
-        './test/specs/**/contact.js'
+        './test/specs/**/blog.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -55,10 +55,17 @@ export const config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://saucelabs.com/platform/platform-configurator
     //
-    capabilities: [{
-        browserName: 'chrome'
-    }],
-
+    capabilities: [
+        {
+          // Chrome capabilities
+          browserName: 'chrome',
+        },
+        // {
+        //   // Edge capabilities
+        //   browserName: 'edge',
+        //   // Add any specific edge options here if needed
+        // },
+      ],
     //
     // ===================
     // Test Configurations
@@ -305,4 +312,4 @@ export const config = {
     */
     // afterAssertion: function(params) {
     // }
-}
+};

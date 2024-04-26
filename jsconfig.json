@@ -1,12 +1,27 @@
+// see link: https://webdriver.io/docs/autocompletion/#visual-studio-code-vscode
 {
   "compilerOptions": {
-    "types": [
-      "node",
-      "webdriverio/async",
-      "@wdio/mocha-framework"
-    ]
+      "types": [
+          "node",
+          "@wdio/globals/types",
+          "@wdio/mocha-framework"
+      ]
   },
   "exclude": [
     "node_modules"
   ]
 }
+
+// According to Lectures didn't work 
+// {
+//   "compilerOptions": {
+//     "types": [
+//       "node",
+//       "webdriverio/async",
+//       "@wdio/mocha-framework"
+//     ]
+//   },
+//   "exclude": [
+//     "node_modules"
+//   ]
+// }

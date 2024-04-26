@@ -22,13 +22,13 @@ describe('Upload Tests', () => {
 
     it('Upload on a hidden input field', async () => {
         // Open url
-        await browser.url('/cart')
+        await browser.url('/cart');
         // store test file path        
         const filePath = path.join(__dirname, '../data/moon.jpg');
         // upload test file        
         const remoteFilePath = await browser.uploadFile(filePath);
         // remove hidden class
-        await browser.execute("document.querySelector('#upfile_1').className = ''")
+        await browser.execute("document.querySelector('#upfile_1').className = ''");
         // set file path value in the input field        
         await $('#upfile_1').setValue(remoteFilePath);
         await $('#upload_1').click(); // click the upload button
