@@ -1,10 +1,9 @@
-// https://practice.sdetunicorns.com/
-// Practice E-Commerce Site – SDET Unicorns
+import ContactPage from "../pages/components/contact-page.js";
 
 describe('Contact', () => {
     it('Open URL & assert title', async () => {
         // Open URL
-        await browsr.url('https://practice.sdetunicorns.com/contact');
+        await ContactPage.open(); 
 
         // Assert page text if needed
         // Replace 'selector-for-page-title' with the actual selector (here XPath)
@@ -12,18 +11,15 @@ describe('Contact', () => {
     });
 
     it('Fill in all the input fields, submit form and assert success message', async () => {
-        await browser.url('/contact');
+        await ContactPage.open(); 
+  
+        await ContactPage.submitForm('Lasse','lasse@gmail.com','0156152316','Tere moi!');    
 
-        // Fill out the input fields
-        await $('.contact-name input').addValue('Lasse');
-        await $('.contact-email input').addValue('lauri.kyttala@gmail.com');
-        await $('.contact-phone input').addValue('1212678');
-        await $('.contact-message textarea').addValue('Hello You!');
-
-        await $('.evf-submit').click();
+        await ContactPage.btnName.click();
         // await $('button[type=submit').click();
 
         // Assert the success message
-        await expect($('.everest-forms-submission-scroll')).toHaveText('Thanks for contacting us! We will be in touch with you shortly'); // validate directly
+        await expect(ContactPage.alertSuccess).toHaveText('Thanks for contacting us! We will be in touch with you shortly'); 
+        // await expect($('.everest-forms-submission-scroll')).toHaveText('Thanks for contacting us! We will be in touch with you shortly'); // validate directly
     });
 });

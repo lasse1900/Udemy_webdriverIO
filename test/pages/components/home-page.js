@@ -1,4 +1,4 @@
-import NavComponent from "./components/nav-comp.js";
+import NavComponent from "./nav-comp.js";
 
 class HomePage {
     open() {

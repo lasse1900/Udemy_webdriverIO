@@ -1,5 +1,5 @@
 // baseUrl = https://practice.sdetuniIcorns.com/
-import HomePage from "../pages/home-page.js";
+import HomePage from "../pages/components/home-page.js";
 
 describe('Navigation Menu', () => {
     it('Get the text of all menu items & assert them', async () => {
