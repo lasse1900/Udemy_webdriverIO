@@ -27,7 +27,7 @@ export const config = {
     //
     specs: [
         // ToDo: define location for spec files here
-        './test/specs/**/contact.js'
+        './test/specs/**/home.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -223,8 +223,9 @@ export const config = {
     /**
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
-    // beforeTest: function (test, context) {
-    // },
+    beforeTest: async function (test, context) {
+        browser.setWindowSize(1000,1000);
+    },
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
      * beforeEach in Mocha)

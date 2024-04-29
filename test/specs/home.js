@@ -1,10 +1,27 @@
 import HomePage from "../pages/components/home-page.js";
 
 describe('Home', () => {
-    it('Open URL & assert title', async () => {
-        // Open URL
-        await HomePage.open();
 
+    // before(async () => {
+    //     console.log("THIS COULD BE USED FOR THE TEST SETUP");
+      
+    // });
+
+    beforeEach(async () => {
+        console.log("THIS RUNS BEFORE EACH");        
+        // Open URL
+        await HomePage.open(); 
+    });
+
+    // after(async () => {
+    //     console.log("THIS COULD BE USED FOR TEST CLEAN UP");        
+    // });
+
+    // afterEach(async () => {
+    //     console.log("THIS RUNS AFTER EACH TEST");        
+    // });    
+
+    it('Open URL & assert title', async () => {
         // Assert title
         await expect(browser).toHaveTitle('Practice E-Commerce Site – SDET Unicorns');
     });
@@ -17,21 +34,15 @@ describe('Home', () => {
         await expect(browser).toHaveUrl('https://practice.sdetunicorns.com/about/');
     });
 
-    it('Click get Started Button and check url contains get-started text', async () => {
-        // Open URL
-        await HomePage.open();
-
+    it('Click get Started Button and check url contains get-started text', async () => {              
         // Click get started button
         await HomePage.btnGetStarted.click();
 
         // Assert title
         await expect(browser).toHaveTitle('Practice E-Commerce Site – SDET Unicorns');
-    });
+    }); 
 
     it('Click Logo and check url doesn\'t contains get-started text', async () => {
-        // Open URL
-        await HomePage.open();
-
         // Click Logo
         await HomePage.imageLogo.click();
 
