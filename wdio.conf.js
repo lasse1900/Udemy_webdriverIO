@@ -27,7 +27,7 @@ export const config = {
     //
     specs: [
         // ToDo: define location for spec files here
-        './test/specs/**/home.js'
+        './test/specs/**/contact-faker.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -73,7 +73,7 @@ export const config = {
     // Define all options that are relevant for the WebdriverIO instance here
     //
     // Level of logging verbosity: trace | debug | info | warn | error | silent
-    logLevel: 'error',
+    logLevel: 'info',
     //
     // Set specific log levels per logger
     // loggers:
@@ -224,7 +224,7 @@ export const config = {
      * Function to be executed before a test (in Mocha/Jasmine) starts.
      */
     beforeTest: async function (test, context) {
-        browser.setWindowSize(1000,1000);
+        browser.setWindowSize(1500,1500);
     },
     /**
      * Hook that gets executed _before_ a hook within the suite starts (e.g. runs before calling
