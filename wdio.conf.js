@@ -27,12 +27,24 @@ export const config = {
     //
     specs: [
         // ToDo: define location for spec files here
-        './test/specs/**/contact-faker.js'
+        './test/specs/**/*.js'
     ],
     // Patterns to exclude.
     exclude: [
         // 'path/to/excluded/files'
+        // './test/specs/**/nav.js',
+        // './test/specs/**/contact.js'        
     ],
+    // Define suites
+    suites: {
+        smoke: [
+            './test/specs/**/home.js',
+            './test/specs/**/contact.js'
+        ],
+        component : [
+            './test/specs/**/nav.js',
+        ]
+    },
     //
     // ============
     // Capabilities
