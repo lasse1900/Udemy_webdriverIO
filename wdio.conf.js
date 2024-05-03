@@ -65,19 +65,30 @@ export const config = {
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
-    // https://saucelabs.com/platform/platform-configurator
+    // https://docs.saucelabs.com/reference/platforms-configurator
     //
-    capabilities: [
-        {
-          // Chrome capabilities
-          browserName: 'chrome',
-        },
-        // {
-        //   // Edge capabilities
-        //   browserName: 'edge',
-        //   // Add any specific edge options here if needed
-        // },
-      ],
+    capabilities: [{
+        // maxInstances can get overwritten per capability. So if you have an in-house Selenium
+        // grid with only 5 firefox instances available you can make sure that not more than
+        // 5 instances get started at a time.
+        maxInstances: 5,
+        //
+        browserName: 'chrome',
+        acceptInsecureCerts: true
+        // If outputDir is provided WebdriverIO can capture driver session logs
+        // it is possible to configure which logTypes to include/exclude.
+        // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
+        // excludeDriverLogs: ['bugreport', 'server'],
+    },
+    {
+        maxInstances: 10,
+        browserName: 'edge'
+    },
+    {
+        maxInstances: 2,
+        browserName: 'firefox'
+    }
+    ],
     //
     // ===================
     // Test Configurations
@@ -133,7 +144,7 @@ export const config = {
     // services: ['browserstack'],
     // services: ['browserstackLocal: true'], // in case testing local (company) website
     // *********** BROWSERSTACK *******************    
-    // services: ['selenium-standalone'],
+    // services: ['selenium-standalone'], // NOT needed beyon version 8
     //
     // Framework you want to run your specs with.
     // The following are supported: Mocha, Jasmine, and Cucumber
