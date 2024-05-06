@@ -1,7 +1,8 @@
 import HomePage from "../pages/components/home-page.js";
+import allureReporter from "@wdio/allure-reporter";
 
 describe('Home', () => {
-
+    allureReporter.addSeverity("minor");
     // before(async () => {
     //     console.log("THIS COULD BE USED FOR THE TEST SETUP");
       
@@ -23,11 +24,15 @@ describe('Home', () => {
 
     it('Open URL & assert title', async () => {
         // Assert title
+        allureReporter.addFeature("Assert the Title");
+        allureReporter.addSeverity("minor");
         await expect(browser).toHaveTitle('Practice E-Commerce Site – SDET Unicorns');
     });
 
     it('Open URL & assert URL', async () => {
         // Open URL
+        allureReporter.addFeature("Assert the URL");
+        allureReporter.addSeverity("trivial");        
         await browser.url('https://practice.sdetunicorns.com/about');
 
         // Assert title
@@ -44,6 +49,8 @@ describe('Home', () => {
 
     it('Click Logo and check url doesn\'t contains get-started text', async () => {
         // Click Logo
+        allureReporter.addFeature("Logo check");
+        allureReporter.addSeverity("critical");
         await HomePage.imageLogo.click();
 
         // Assert title
@@ -52,6 +59,8 @@ describe('Home', () => {
 
     it('Find heading element & assert the text', async () => {
         // Open URL
+       allureReporter.addFeature("Find heading element");
+       allureReporter.addSeverity("blocker");
        await browser.url('https://practice.sdetunicorns.com/about/');
 
         // Find heading element
