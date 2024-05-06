@@ -10,7 +10,7 @@ describe('Blog', () => {
         await expect(browser).toHaveTitle('Blog – Practice E-Commerce Site');
     });
 
-    it('Get the list of all Recent Posts & assert the length of each item > 10', async () => {
+    it('Get the list of all Recent Posts & assert the length of each item > 10 and assert number of posts = 5', async () => {
         // Open URL
         await BlogPage.open();        
 
