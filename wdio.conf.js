@@ -1,4 +1,4 @@
-import allure from "allure-commandline";
+// import allure from "allure-commandline";
 
 export const config = {
     // ====================
@@ -169,11 +169,14 @@ export const config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
-    reporters: ['spec', ['allure', {
-        outputDir: 'allure-results',
-        disableWebdriverStepsReporting: false,
-        disableWebdriverScreenshotsReporting: false,
-    }]],
+    reporters: ['spec'
+    ],
+    //
+    // reporters: ['spec', ['allure', {
+    //     outputDir: 'allure-results',
+    //     disableWebdriverStepsReporting: false,
+    //     disableWebdriverScreenshotsReporting: false,
+    // }]],
 
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
@@ -325,8 +328,8 @@ export const config = {
      * @param {<Object>} results object containing test results
      */
     onComplete: function() {
-        const reportError = new Error('Could not generate Allure report');
-        const generation = allure(['generate', 'allure-results', '--clean']);
+        // const reportError = new Error('Could not generate Allure report');
+        // const generation = allure(['generate', 'allure-results', '--clean']);
         return new Promise((resolve, reject) => {
             const generationTimeout = setTimeout(
                 () => reject(reportError),
@@ -335,9 +338,9 @@ export const config = {
             generation.on('exit', function(exitCode) {
                 clearTimeout(generationTimeout);
 
-                if (exitCode !== 0) {
-                    return reject(reportError);
-                }
+                // if (exitCode !== 0) {
+                //     return reject(reportError);
+                // }
 
                 console.log('Allure report successfully generated');
                 resolve();
