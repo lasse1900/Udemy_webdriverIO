@@ -82,14 +82,14 @@ export const config = {
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
         // excludeDriverLogs: ['bugreport', 'server'],
     },
-    {
-        maxInstances: 10,
-        browserName: 'edge'
-    },
-    {
-        maxInstances: 2,
-        browserName: 'firefox'
-    }
+    // {
+    //     maxInstances: 10,
+    //     browserName: 'edge'
+    // },
+    // {
+    //     maxInstances: 2,
+    //     browserName: 'firefox'
+    // }
     ],
     //
     // ===================
