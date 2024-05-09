@@ -143,7 +143,7 @@ export const config = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     // *********** BROWSERSTACK *******************
-    // services: ['browserstack'],
+    services: ['browserstack'],
     // services: ['browserstackLocal: true'], // in case testing local (company) website
     // *********** BROWSERSTACK *******************    
     // services: ['selenium-standalone'], // NOT needed beyon version 8
