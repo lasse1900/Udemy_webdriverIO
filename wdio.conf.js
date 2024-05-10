@@ -143,7 +143,7 @@ export const config = {
     // your test setup with almost no effort. Unlike plugins, they don't add new
     // commands. Instead, they hook themselves up into the test process.
     // *********** BROWSERSTACK *******************
-    services: ['browserstack'],
+    // services: ['browserstack'],
     // services: ['browserstackLocal: true'], // in case testing local (company) website
     // *********** BROWSERSTACK *******************    
     // services: ['selenium-standalone'], // NOT needed beyon version 8
@@ -330,10 +330,10 @@ export const config = {
     onComplete: function() {
         // const reportError = new Error('Could not generate Allure report');
         // const generation = allure(['generate', 'allure-results', '--clean']);
-        return new Promise((resolve, reject) => {
-            const generationTimeout = setTimeout(
-                () => reject(reportError),
-                5000);
+        // return new Promise((resolve, reject) => {
+        //     const generationTimeout = setTimeout(
+        //         () => reject(reportError),
+        //         5000);
 
             generation.on('exit', function(exitCode) {
                 clearTimeout(generationTimeout);
@@ -342,10 +342,10 @@ export const config = {
                 //     return reject(reportError);
                 // }
 
-                console.log('Allure report successfully generated');
-                resolve();
+                // console.log('Allure report successfully generated');
+                // resolve();
             });
-        });
+        // });
     },
     /**
     * Gets executed when a refresh happens.
