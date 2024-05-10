@@ -69,7 +69,8 @@ export const config = {
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
     // https://docs.saucelabs.com/reference/platforms-configurator
     //
-    capabilities: [{
+    capabilities: [
+    {
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
@@ -82,14 +83,14 @@ export const config = {
         // excludeDriverLogs: ['*'], // pass '*' to exclude all driver session logs
         // excludeDriverLogs: ['bugreport', 'server'],
     },
-    {
-        maxInstances: 10,
-        browserName: 'edge'
-    },
-    {
-        maxInstances: 2,
-        browserName: 'firefox'
-    }
+    // {
+    //     maxInstances: 10,
+    //     browserName: 'edge'
+    // },
+    // {
+    //     maxInstances: 2,
+    //     browserName: 'firefox'
+    // }
     ],
     //
     // ===================
@@ -169,6 +170,9 @@ export const config = {
     // Test reporter for stdout.
     // The only one supported by default is 'dot'
     // see also: https://webdriver.io/docs/dot-reporter
+    // reporters: ['spec'
+    // ],
+    //
     reporters: ['spec', ['allure', {
         outputDir: 'allure-results',
         disableWebdriverStepsReporting: false,
@@ -339,7 +343,7 @@ export const config = {
                     return reject(reportError);
                 }
 
-                console.log('Allure report successfully generated')
+                console.log('Allure report successfully generated');
                 resolve();
             });
         });
